@@ -11,7 +11,7 @@
     font-family: 'MuseoModerno', cursive;
 }
 
-/* -- Title Index -- */
+/* -- index.html -- */
 .title-container h1 {
     color: #f890e7;
     font-size: 60px;
@@ -71,4 +71,6 @@ a.btn {
 .fa-medal{
     font-size: 12px;
 }
+
+
 
