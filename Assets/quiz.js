@@ -6,6 +6,7 @@ var scoreText = document.querySelector("#score");
 var cuurentQuestion = {};
 var acceptingAnswers = true;
 var score = 0;
+var scorePoints = 10;
 var questionCounter = 0;
 var availableQuestions = [];
 
@@ -57,6 +58,39 @@ startQuiz = function(){
 getNewQuestion = function(){
     if(availableQuestions.lenght === 0 || questionCounter > amountOfQuestions){
         localStorage.setItem('mostRecentScore', score)
-
+        return window.location.assign("/end.html")
     }
+    questionCounter++;
+    var questionIndex = Math.floor(Math.random()* availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    })
+    
+    availableQuestions.splice(questionIndex, 1);
+    acceptingAnswers = true;
+
 }
+
+choices.forEach(choice =>{
+    choice.addEventListener('click', e =>{
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false;
+        var selectedChoice = e.target;
+        var selectedAnswer = selectedChoice.dataset['number'];
+
+        var classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        if(classToApply === 'correct'){
+           incrementScore(scorePoints); 
+        }
+        selectedChoice.parentElelement.classList.add(classToApply);
+        setTimeout(() => {
+            selectedChoice.parentElelement.classList.remove(classToApply);
+            getNewQuestion()
+        }), 10
+    })
+})
