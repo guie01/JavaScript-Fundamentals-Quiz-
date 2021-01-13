@@ -1,0 +1,16 @@
+.quiz-container{
+    width: 100%;
+    margin-left: 38%;
+    margin-top: 5%;
+}
+.question{
+    color: #f890e7;
+    font-size: 44px;
+}
+.answers-container{
+    color:#0bd3d3;
+    display: flex;
+    font-size: 34px;
+    cursor: pointer;
+    margin-top: 10px;
+}
