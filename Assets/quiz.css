@@ -14,3 +14,14 @@
     cursor: pointer;
     margin-top: 10px;
 }
+.your-score{
+    color:white;
+    font-size: 44px; 
+    margin-top: 150px; 
+}
+.score{
+    color: #f890e7;
+    font-size: 44px; 
+    margin-top: 10px;
+
+}
