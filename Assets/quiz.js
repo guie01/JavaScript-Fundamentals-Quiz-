@@ -4,7 +4,7 @@ var timer = document.querySelector(".timer");
 var scoreText = document.querySelector(".score");
 
 var currentQuestion = {};
-var acceptingAnswers = true;
+var acceptingAnswers = false;
 var score = 0;
 var scorePoints = 10;
 var availableQuestions = [];
@@ -63,9 +63,25 @@ function getNewQuestion(){
         var number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
         console.log(choice);
-    })
+    });
+
+    availableQuestions.splice(questionIndex, 1);
+
+    acceptingAnswers = true;
 };
 
+choices.forEach(choice =>{
+    choice.addEventListener('click', e =>{
+        console.log("user clicked " + e.target);
+        if(!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        var selectedChoice = e.target;
+        var selectedAnswer = selectedChoice.dataset['number']
+        console.log(selectedAnswer);
+        getNewQuestion();
+    })
+})
 startGame();
 
 
