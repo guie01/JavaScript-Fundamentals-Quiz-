@@ -86,6 +86,9 @@ choices.forEach(choice =>{
         if(selectedAnswer == currentQuestion.answer){
             classToApply = 'correct'
         };
+        if(classToApply === 'correct'){
+            incrementScore(scorePoints);
+        }
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(function(){ 
@@ -98,6 +101,12 @@ choices.forEach(choice =>{
         
     })
 })
+
+incrementScore = num => {
+   score += num;
+   scoreText.innerText = score;
+}
+
 startGame();
 
 
