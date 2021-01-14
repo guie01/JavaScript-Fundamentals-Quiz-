@@ -13,6 +13,12 @@
     transition: all 0.15s;
     margin-left: 35%;
 }
+.savescore{
+    color:#0bd3d3;
+    font-size: 44px; 
+    margin-top: 10px;
+    margin-left: 47%;
+}
 
 #username{
     margin-left: 20%; 

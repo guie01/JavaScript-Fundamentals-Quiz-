@@ -55,8 +55,10 @@ function startGame(){
 
 function getNewQuestion(){
     if(availableQuestions.length === 0 || questionCounter > maximumQuestions){
+        localStorage.setItem('mostRecentScore', score);
         return window.location.assign("/Assets/highscore.html");
     }
+
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
