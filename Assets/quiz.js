@@ -33,7 +33,7 @@ var questions = [
         choice2: "<h1>",
         choice3: "<script>",
         choice4: "<meta>",
-        answer: 2
+        answer: 3
     },
     {
         question: "Which of the following type of variable is visible everywhere in your JavaScript code?",
@@ -54,6 +54,9 @@ function startGame(){
 };
 
 function getNewQuestion(){
+    if(availableQuestions.length === 0 || questionCounter > maximumQuestions){
+        return window.location.assign("/highscore.html");
+    }
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -78,8 +81,21 @@ choices.forEach(choice =>{
         acceptingAnswers = false;
         var selectedChoice = e.target;
         var selectedAnswer = selectedChoice.dataset['number']
-        console.log(selectedAnswer);
-        getNewQuestion();
+
+        var classToApply = 'incorrect';
+        if(selectedAnswer == currentQuestion.answer){
+            classToApply = 'correct'
+        };
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(function(){ 
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();    
+        },1000)
+        
+
+        console.log(classToApply);
+        
     })
 })
 startGame();
