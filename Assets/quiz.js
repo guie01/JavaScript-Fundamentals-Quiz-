@@ -55,7 +55,7 @@ function startGame(){
 
 function getNewQuestion(){
     if(availableQuestions.length === 0 || questionCounter > maximumQuestions){
-        return window.location.assign("/highscore.html");
+        return window.location.assign("/Assets/highscore.html");
     }
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);

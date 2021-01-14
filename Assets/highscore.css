@@ -1,0 +1,28 @@
+.btnplayagain{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:1.5px solid #f890e7;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'MuseoModerno', cursive;
+    font-weight:400;
+    font-size: 12px;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+    margin-left: 35%;
+}
+
+#username{
+    margin-left: 20%; 
+    margin-bottom: 10px; 
+    height: 25px;
+    width: 300px;
+    font-size: 25px; 
+    text-align: center;
+}
+#highscore{
+    margin-left: 32%;
+    margin-top: 10px;
+}
