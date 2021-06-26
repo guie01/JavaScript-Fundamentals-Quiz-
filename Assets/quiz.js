@@ -56,9 +56,8 @@ function startGame(){
 function getNewQuestion(){
     if(availableQuestions.length === 0 || questionCounter > maximumQuestions){
         localStorage.setItem('mostRecentScore', score);
-        return window.location.assign("/Assets/highscore.html");
+        return window.location.assign("./highscore.html");
     }
-
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -107,8 +106,8 @@ choices.forEach(choice =>{
 incrementScore = num => {
    score += num;
    scoreText.innerText = score;
-}
 
+}
 startGame();
 
 
