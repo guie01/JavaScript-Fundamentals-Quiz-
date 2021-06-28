@@ -9,19 +9,30 @@
 </head>
 <body>
     <div class = "title-container">
-        <h1>Highscore</h1>
+        <h1>Your Score</h1>
     
       </div>
         
         <div class = "container">
-            <div class = "savescore"></div>
+            <div id = "savescore"></div>
             <form>
-                <input type = "text" name = "username" id = "username" placeholder = 'Please type your name'>
+                <input type = "text" name = "username" id = "username" placeholder = 'Please type your initials'>
             </form>
             <a href = "quiz.html" class = "btnplayagain">Play Again!</a>
             <a onclick="saveHighScore(event)" class = "btnplayagain" id = "highscore">Save Highscore</a>
-            
         </div>
+
+        <div class = "title-container">
+            <h1>High Scores</h1>
+        </div>
+
+        <div class="container">
+            <div id="highScoresList">
+            </div>
+            <a class="btn" href="../index.html" id = "go-home">Go Home</a>
+          </div>
+
+
         <script src = "highscore.js"></script>
 </body>
 </html>
